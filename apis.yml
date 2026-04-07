@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: social-security-administration:social-security-administration
     name: Social Security Administration
-    tags:
-      - API
+    tags: []
     humanURL: https://www.ssa.gov/developer
     properties:
       - url: https://www.ssa.gov/developer
