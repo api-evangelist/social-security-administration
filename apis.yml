@@ -11,11 +11,11 @@ apis:
       - url: https://www.ssa.gov/developer
         type: Documentation
     description: >-
-      The Developer Support site provides Social Security Administrations (SSA)
-      user development community with links to documentation and information
-      about SSA applications. This allows developers to automate their
-      organizations processes to interact with SSA applications. Field Office
-      and Resident Station Address Data APIs
+      The Developer Support site provides Social Security Administrations (SSA) user
+      development community with links to documentation and information about SSA
+      applications. This allows developers to automate their organizations processes
+      to interact with SSA applications. Field Office and Resident Station Address
+      Data APIs.
 name: Social Security Administration
 tags:
   - Federal Government
@@ -26,11 +26,10 @@ created: '2024-12-03'
 modified: '2026-03-16'
 position: Consuming
 description: >-
-  The Developer Support site provides Social Security Administrations (SSA) user
-  development community with links to documentation and information about SSA
-  applications. This allows developers to automate their organizations processes
-  to interact with SSA applications. Field Office and Resident Station Address
-  Data APIs
+  The Developer Support site provides Social Security Administrations (SSA) user development
+  community with links to documentation and information about SSA applications. This
+  allows developers to automate their organizations processes to interact with SSA
+  applications. Field Office and Resident Station Address Data APIs.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
