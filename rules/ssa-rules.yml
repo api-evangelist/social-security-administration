@@ -1,0 +1,71 @@
+extends: spectral:oas
+rules:
+  ssa-no-authentication:
+    description: SSA public data APIs do not require authentication
+    message: "SSA public location APIs should not require authentication — they serve public government data."
+    severity: info
+    given: "$.security"
+    then:
+      function: falsy
+
+  ssa-arcgis-query-where-required:
+    description: ArcGIS query endpoints should document the required where parameter
+    message: "ArcGIS query endpoints must document the 'where' parameter for SQL filtering."
+    severity: error
+    given: "$.paths.*.get.parameters[?(@.name == 'where')]"
+    then:
+      field: required
+      function: truthy
+
+  ssa-arcgis-format-parameter:
+    description: ArcGIS endpoints should document the f (format) parameter
+    message: "ArcGIS REST endpoints should document the 'f' parameter for response format selection."
+    severity: warn
+    given: "$.paths.*.*.parameters"
+    then:
+      function: truthy
+
+  ssa-government-license-documented:
+    description: Government APIs must document public domain licensing
+    message: "Government APIs must document their license as public domain or U.S. Government Work."
+    severity: error
+    given: "$.info.license"
+    then:
+      field: name
+      function: truthy
+
+  ssa-contact-info-required:
+    description: Government APIs must provide contact information
+    message: "Government API specifications must include contact information for the agency."
+    severity: error
+    given: "$.info.contact"
+    then:
+      field: url
+      function: truthy
+
+  ssa-tags-required:
+    description: All operations must have tags
+    message: "All SSA API operations must include descriptive tags."
+    severity: error
+    given: "$.paths.*.*"
+    then:
+      field: tags
+      function: truthy
+
+  ssa-response-schema-defined:
+    description: Responses should define a schema for data consumers
+    message: "API responses should define a schema to help developers understand the data structure."
+    severity: warn
+    given: "$.paths.*.*.responses.*.content.*.schema"
+    then:
+      function: truthy
+
+  ssa-path-kebab-case:
+    description: URL path segments should use kebab-case
+    message: "Path segments should use kebab-case (lowercase with hyphens)."
+    severity: warn
+    given: "$.paths"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(/[a-z0-9{}-]+)*/?$"

@@ -1,0 +1,69 @@
+{
+  "title": "SSA Field Office Query",
+  "description": "Example query and response for retrieving SSA Field Offices in California from the ArcGIS Feature Service",
+  "request": {
+    "method": "GET",
+    "url": "https://services6.arcgis.com/zFiipv75rloRP5N4/ArcGIS/rest/services/Office_Points/FeatureServer/1/query",
+    "query_parameters": {
+      "where": "STATE='CA'",
+      "outFields": "*",
+      "f": "json",
+      "resultRecordCount": 5,
+      "orderByFields": "CITY ASC"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "objectIdFieldName": "ObjectId",
+      "globalIdFieldName": "",
+      "fields": [
+        { "name": "OFFICE_CODE", "alias": "OFFICE_CODE", "type": "esriFieldTypeString" },
+        { "name": "OFFICE_NAME", "alias": "OFFICE_NAME", "type": "esriFieldTypeString" },
+        { "name": "ADDRESS_LINE_1", "alias": "ADDRESS_LINE_1", "type": "esriFieldTypeString" },
+        { "name": "CITY", "alias": "CITY", "type": "esriFieldTypeString" },
+        { "name": "STATE", "alias": "STATE", "type": "esriFieldTypeString" },
+        { "name": "ZIP_CODE", "alias": "ZIP_CODE", "type": "esriFieldTypeString" },
+        { "name": "PHONE", "alias": "PHONE", "type": "esriFieldTypeString" },
+        { "name": "MONDAY_OPEN_TIME", "alias": "MONDAY_OPEN_TIME", "type": "esriFieldTypeString" },
+        { "name": "MONDAY_CLOSE_TIME", "alias": "MONDAY_CLOSE_TIME", "type": "esriFieldTypeString" },
+        { "name": "LATITUDE_NUM", "alias": "LATITUDE_NUM", "type": "esriFieldTypeDouble" },
+        { "name": "LONGITUDE_NUM", "alias": "LONGITUDE_NUM", "type": "esriFieldTypeDouble" }
+      ],
+      "features": [
+        {
+          "attributes": {
+            "OFFICE_CODE": "1040",
+            "OFFICE_NAME": "Alhambra Social Security Office",
+            "ADDRESS_LINE_1": "2340 Huntington Dr",
+            "ADDRESS_LINE_2": null,
+            "ADDRESS_LINE_3": null,
+            "CITY": "Alhambra",
+            "STATE": "CA",
+            "ZIP_CODE": "91803",
+            "PHONE": "1-800-772-1213",
+            "FAX": null,
+            "MONDAY_OPEN_TIME": "9:00 AM",
+            "MONDAY_CLOSE_TIME": "4:00 PM",
+            "TUESDAY_OPEN_TIME": "9:00 AM",
+            "TUESDAY_CLOSE_TIME": "4:00 PM",
+            "WEDNESDAY_OPEN_TIME": "9:00 AM",
+            "WEDNESDAY_CLOSE_TIME": "12:00 PM",
+            "THURSDAY_OPEN_TIME": "9:00 AM",
+            "THURSDAY_CLOSE_TIME": "4:00 PM",
+            "FRIDAY_OPEN_TIME": "9:00 AM",
+            "FRIDAY_CLOSE_TIME": "4:00 PM",
+            "LATITUDE_NUM": 34.074,
+            "LONGITUDE_NUM": -118.127,
+            "ObjectId": 145
+          },
+          "geometry": {
+            "x": -13150000,
+            "y": 4038000
+          }
+        }
+      ],
+      "exceededTransferLimit": false
+    }
+  }
+}

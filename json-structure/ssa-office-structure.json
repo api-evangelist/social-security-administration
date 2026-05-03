@@ -1,0 +1,125 @@
+{
+  "title": "SSA Office Structure",
+  "description": "JSON Structure documentation for SSA Field Office and Resident Station data records from the SSA Location API",
+  "type": "object",
+  "fields": [
+    {
+      "name": "OFFICE_CODE",
+      "type": "string",
+      "required": true,
+      "description": "Unique SSA-assigned office code identifier"
+    },
+    {
+      "name": "OFFICE_NAME",
+      "type": "string",
+      "required": true,
+      "description": "Official full name of the SSA office or resident station"
+    },
+    {
+      "name": "ADDRESS_LINE_1",
+      "type": "string",
+      "required": false,
+      "description": "Primary street address (street number and name)"
+    },
+    {
+      "name": "ADDRESS_LINE_2",
+      "type": "string",
+      "required": false,
+      "description": "Secondary address: suite, room, floor, or building name"
+    },
+    {
+      "name": "ADDRESS_LINE_3",
+      "type": "string",
+      "required": false,
+      "description": "Additional address information (rarely populated)"
+    },
+    {
+      "name": "CITY",
+      "type": "string",
+      "required": true,
+      "description": "City where the office is located"
+    },
+    {
+      "name": "STATE",
+      "type": "string (2 chars)",
+      "required": true,
+      "description": "Two-letter U.S. state abbreviation (e.g. CA, TX, NY)"
+    },
+    {
+      "name": "ZIP_CODE",
+      "type": "string",
+      "required": false,
+      "description": "U.S. ZIP code (5 digits or ZIP+4 format)"
+    },
+    {
+      "name": "PHONE",
+      "type": "string",
+      "required": false,
+      "description": "Main telephone number for public contact"
+    },
+    {
+      "name": "FAX",
+      "type": "string",
+      "required": false,
+      "description": "Fax number (may be null for offices without fax)"
+    },
+    {
+      "name": "MONDAY_OPEN_TIME / MONDAY_CLOSE_TIME",
+      "type": "string (time)",
+      "required": false,
+      "description": "Monday office hours — open and close times. Null if closed or varies."
+    },
+    {
+      "name": "TUESDAY_OPEN_TIME / TUESDAY_CLOSE_TIME",
+      "type": "string (time)",
+      "required": false,
+      "description": "Tuesday office hours"
+    },
+    {
+      "name": "WEDNESDAY_OPEN_TIME / WEDNESDAY_CLOSE_TIME",
+      "type": "string (time)",
+      "required": false,
+      "description": "Wednesday office hours"
+    },
+    {
+      "name": "THURSDAY_OPEN_TIME / THURSDAY_CLOSE_TIME",
+      "type": "string (time)",
+      "required": false,
+      "description": "Thursday office hours"
+    },
+    {
+      "name": "FRIDAY_OPEN_TIME / FRIDAY_CLOSE_TIME",
+      "type": "string (time)",
+      "required": false,
+      "description": "Friday office hours"
+    },
+    {
+      "name": "LATITUDE_NUM",
+      "type": "number (double)",
+      "required": false,
+      "description": "Geographic latitude in decimal degrees (WGS 84 datum)"
+    },
+    {
+      "name": "LONGITUDE_NUM",
+      "type": "number (double)",
+      "required": false,
+      "description": "Geographic longitude in decimal degrees (WGS 84 datum)"
+    },
+    {
+      "name": "ObjectId",
+      "type": "integer",
+      "required": false,
+      "description": "ArcGIS Feature Service system identifier — unique primary key"
+    }
+  ],
+  "arcgis_feature": {
+    "description": "ArcGIS Feature wrapper that includes the above attributes and a geometry object",
+    "structure": {
+      "attributes": "object containing the fields above",
+      "geometry": {
+        "x": "longitude in Web Mercator (EPSG:3857)",
+        "y": "latitude in Web Mercator (EPSG:3857)"
+      }
+    }
+  }
+}

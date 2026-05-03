@@ -1,0 +1,57 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "gov": "https://www.ssa.gov/ontology/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+
+    "GovernmentOffice": {
+      "@id": "schema:GovernmentOffice",
+      "@type": "@id"
+    },
+    "FieldOffice": "gov:FieldOffice",
+    "ResidentStation": "gov:ResidentStation",
+    "VideoServiceDelivery": "gov:VideoServiceDelivery",
+    "SocialSecurityAdministration": {
+      "@id": "schema:GovernmentOrganization",
+      "@type": "@id"
+    },
+    "SSNVerification": "gov:SocialSecurityNumberVerification",
+    "OASDIBenefit": "gov:OASDIBenefit",
+    "BeneficiaryData": "gov:BeneficiaryData",
+
+    "OFFICE_CODE": "schema:identifier",
+    "OFFICE_NAME": "schema:name",
+    "ADDRESS_LINE_1": "schema:streetAddress",
+    "CITY": "schema:addressLocality",
+    "STATE": "schema:addressRegion",
+    "ZIP_CODE": "schema:postalCode",
+    "PHONE": "schema:telephone",
+    "FAX": "schema:faxNumber",
+    "LATITUDE_NUM": "geo:lat",
+    "LONGITUDE_NUM": "geo:long",
+
+    "openTime": "schema:openingHoursSpecification",
+    "dayOfWeek": "schema:dayOfWeek",
+    "opens": "schema:opens",
+    "closes": "schema:closes",
+    "addressCountry": {
+      "@id": "schema:addressCountry",
+      "@type": "@id",
+      "@value": "US"
+    },
+    "postalAddress": {
+      "@id": "schema:postalAddress",
+      "@type": "schema:PostalAddress"
+    },
+    "location": {
+      "@id": "schema:location",
+      "@type": "schema:Place"
+    },
+    "geo": {
+      "@id": "schema:geo",
+      "@type": "schema:GeoCoordinates"
+    }
+  }
+}

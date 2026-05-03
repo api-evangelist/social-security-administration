@@ -1,0 +1,190 @@
+openapi: 3.0.3
+info:
+  title: SSA Resident Station Address API
+  description: >-
+    The Social Security Administration Resident Station Address API provides location data, addresses, telephone numbers, and office hours for SSA Resident Stations — smaller SSA offices that serve rural and underserved communities. Data is served through the Esri ArcGIS Online platform as a RESTful Feature Service. No authentication required.
+  version: '1.0'
+  contact:
+    name: SSA Developer Support
+    url: https://www.ssa.gov/developer/
+  license:
+    name: Public Domain (U.S. Government Work)
+    url: https://www.usa.gov/government-works
+servers:
+  - url: https://services6.arcgis.com/zFiipv75rloRP5N4/arcgis/rest/services/SSA_Resident_Station_Information/FeatureServer
+    description: SSA Resident Station ArcGIS Feature Service
+tags:
+  - name: Resident Stations
+    description: Query SSA Resident Station locations and hours
+paths:
+  /0/query:
+    get:
+      operationId: queryResidentStations
+      summary: Query Resident Stations
+      description: >-
+        Query SSA Resident Station locations, addresses, phone numbers, and hours of operation. Resident Stations are smaller SSA offices that may have limited hours. Use where=1=1 to retrieve all stations.
+      tags:
+        - Resident Stations
+      parameters:
+        - name: where
+          in: query
+          required: true
+          description: SQL WHERE clause to filter records (use '1=1' for all records)
+          schema:
+            type: string
+            default: '1=1'
+          example: "STATE='TX'"
+        - name: outFields
+          in: query
+          required: false
+          description: Comma-separated list of fields to return, or * for all fields
+          schema:
+            type: string
+            default: '*'
+        - name: f
+          in: query
+          required: false
+          description: Response format
+          schema:
+            type: string
+            enum: [json, geojson, html]
+            default: json
+        - name: resultOffset
+          in: query
+          required: false
+          description: Offset for pagination
+          schema:
+            type: integer
+            default: 0
+        - name: resultRecordCount
+          in: query
+          required: false
+          description: Maximum number of records to return
+          schema:
+            type: integer
+            default: 1000
+            maximum: 1000
+        - name: orderByFields
+          in: query
+          required: false
+          description: Fields to sort results by
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Resident Station records matching the query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResidentStationQueryResponse'
+components:
+  schemas:
+    ResidentStationQueryResponse:
+      type: object
+      properties:
+        objectIdFieldName:
+          type: string
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+              alias:
+                type: string
+        features:
+          type: array
+          description: Array of matching resident station records
+          items:
+            $ref: '#/components/schemas/ResidentStationFeature'
+        exceededTransferLimit:
+          type: boolean
+    ResidentStationFeature:
+      type: object
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ResidentStationAttributes'
+        geometry:
+          type: object
+          properties:
+            x:
+              type: number
+            y:
+              type: number
+    ResidentStationAttributes:
+      type: object
+      properties:
+        OFFICE_CODE:
+          type: string
+          description: Unique office code identifier
+        OFFICE_NAME:
+          type: string
+          description: Full name of the SSA resident station
+        ADDRESS_LINE_1:
+          type: string
+          description: Primary street address
+        ADDRESS_LINE_2:
+          type: string
+          description: Secondary address line
+        ADDRESS_LINE_3:
+          type: string
+          description: Additional address information
+        CITY:
+          type: string
+          description: City where the station is located
+        STATE:
+          type: string
+          description: Two-letter state abbreviation
+        ZIP_CODE:
+          type: string
+          description: ZIP code
+        PHONE:
+          type: string
+          description: Main phone number
+        FAX:
+          type: string
+          description: Fax number
+        MONDAY_OPEN_TIME:
+          type: string
+          description: Monday opening time
+        MONDAY_CLOSE_TIME:
+          type: string
+          description: Monday closing time
+        TUESDAY_OPEN_TIME:
+          type: string
+          description: Tuesday opening time
+        TUESDAY_CLOSE_TIME:
+          type: string
+          description: Tuesday closing time
+        WEDNESDAY_OPEN_TIME:
+          type: string
+          description: Wednesday opening time
+        WEDNESDAY_CLOSE_TIME:
+          type: string
+          description: Wednesday closing time
+        THURSDAY_OPEN_TIME:
+          type: string
+          description: Thursday opening time
+        THURSDAY_CLOSE_TIME:
+          type: string
+          description: Thursday closing time
+        FRIDAY_OPEN_TIME:
+          type: string
+          description: Friday opening time
+        FRIDAY_CLOSE_TIME:
+          type: string
+          description: Friday closing time
+        LATITUDE_NUM:
+          type: number
+          format: double
+          description: Latitude in decimal degrees (WGS 84)
+        LONGITUDE_NUM:
+          type: number
+          format: double
+          description: Longitude in decimal degrees (WGS 84)
+        ObjectId:
+          type: integer
+          description: ArcGIS system unique identifier

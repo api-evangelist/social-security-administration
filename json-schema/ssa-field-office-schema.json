@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/social-security-administration/blob/main/json-schema/ssa-field-office-schema.json",
+  "title": "SSA Field Office",
+  "description": "Schema for a Social Security Administration Field Office record, representing office location, address, contact information, and hours of operation.",
+  "type": "object",
+  "required": ["OFFICE_CODE", "OFFICE_NAME", "CITY", "STATE"],
+  "properties": {
+    "OFFICE_CODE": {
+      "type": "string",
+      "description": "Unique identifier code assigned to the SSA field office"
+    },
+    "OFFICE_NAME": {
+      "type": "string",
+      "description": "Official name of the SSA field office (e.g. 'Los Angeles Field Office')"
+    },
+    "ADDRESS_LINE_1": {
+      "type": "string",
+      "description": "Primary street address of the office"
+    },
+    "ADDRESS_LINE_2": {
+      "type": ["string", "null"],
+      "description": "Secondary address information (suite number, floor, building name)"
+    },
+    "ADDRESS_LINE_3": {
+      "type": ["string", "null"],
+      "description": "Additional address information"
+    },
+    "CITY": {
+      "type": "string",
+      "description": "City where the field office is located"
+    },
+    "STATE": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "description": "Two-letter U.S. state abbreviation (e.g. 'CA', 'TX', 'NY')"
+    },
+    "ZIP_CODE": {
+      "type": "string",
+      "description": "ZIP code of the field office"
+    },
+    "PHONE": {
+      "type": ["string", "null"],
+      "description": "Main telephone number for the field office"
+    },
+    "FAX": {
+      "type": ["string", "null"],
+      "description": "Fax number for the field office"
+    },
+    "MONDAY_OPEN_TIME": {
+      "type": ["string", "null"],
+      "description": "Monday opening time (e.g. '09:00 AM')"
+    },
+    "MONDAY_CLOSE_TIME": {
+      "type": ["string", "null"],
+      "description": "Monday closing time"
+    },
+    "TUESDAY_OPEN_TIME": {
+      "type": ["string", "null"],
+      "description": "Tuesday opening time"
+    },
+    "TUESDAY_CLOSE_TIME": {
+      "type": ["string", "null"],
+      "description": "Tuesday closing time"
+    },
+    "WEDNESDAY_OPEN_TIME": {
+      "type": ["string", "null"],
+      "description": "Wednesday opening time"
+    },
+    "WEDNESDAY_CLOSE_TIME": {
+      "type": ["string", "null"],
+      "description": "Wednesday closing time"
+    },
+    "THURSDAY_OPEN_TIME": {
+      "type": ["string", "null"],
+      "description": "Thursday opening time"
+    },
+    "THURSDAY_CLOSE_TIME": {
+      "type": ["string", "null"],
+      "description": "Thursday closing time"
+    },
+    "FRIDAY_OPEN_TIME": {
+      "type": ["string", "null"],
+      "description": "Friday opening time"
+    },
+    "FRIDAY_CLOSE_TIME": {
+      "type": ["string", "null"],
+      "description": "Friday closing time"
+    },
+    "LATITUDE_NUM": {
+      "type": ["number", "null"],
+      "description": "Office latitude in decimal degrees (WGS 84)"
+    },
+    "LONGITUDE_NUM": {
+      "type": ["number", "null"],
+      "description": "Office longitude in decimal degrees (WGS 84)"
+    },
+    "ObjectId": {
+      "type": "integer",
+      "description": "ArcGIS Feature Service unique record identifier"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+title: Social Security Administration Vocabulary
+description: >-
+  Domain vocabulary for the Social Security Administration (SSA) — covering Social Security programs, benefit types, agency terminology, data APIs, and verification services.
+created: '2026-05-02'
+modified: '2026-05-02'
+tags:
+  - Federal Government
+  - Social Security
+  - Government Data
+
+terms:
+  - term: Social Security Administration (SSA)
+    definition: >-
+      A U.S. federal agency established in 1935 that administers Social Security — a program providing retirement, disability, and survivors benefits funded through payroll taxes. SSA also administers the Supplemental Security Income (SSI) program for low-income elderly and disabled individuals.
+    tags:
+      - Agency
+
+  - term: OASDI
+    definition: >-
+      Old-Age, Survivors, and Disability Insurance — the formal name for the Social Security program. OASDI provides monthly benefits to: retired workers and their dependents (Old-Age), survivors of deceased workers (Survivors), and disabled workers and their dependents (Disability Insurance).
+    tags:
+      - Programs
+      - Benefits
+
+  - term: Social Security Number (SSN)
+    definition: >-
+      A nine-digit identification number issued by the SSA to U.S. citizens, permanent residents, and eligible non-citizens for purposes of tracking Social Security benefits, tax reporting, and identity verification. SSNs are formatted as ###-##-####.
+    tags:
+      - Identity
+      - Core Concepts
+
+  - term: Field Office
+    definition: >-
+      A full-service Social Security Administration office open to the public five days a week. Field Offices provide in-person services including benefit applications, card replacement, and appeals. There are approximately 1,200 field offices across the United States.
+    tags:
+      - Offices
+      - Location Data
+
+  - term: Resident Station
+    definition: >-
+      A smaller SSA office that serves rural or underserved communities on a limited or rotating schedule. Resident Stations typically have fewer staff than Field Offices and may be open only certain days of the week.
+    tags:
+      - Offices
+      - Location Data
+
+  - term: Video Service Delivery (VSD)
+    definition: >-
+      An SSA service delivery model that uses video technology to connect claimants in remote areas with SSA representatives at distant offices. VSD sites may be co-located with other government facilities, libraries, or community centers.
+    tags:
+      - Service Delivery
+
+  - term: eCBSV (Electronic Consent Based SSN Verification)
+    definition: >-
+      A fee-based SSA service that allows financial institutions to verify whether a submitted Social Security Number, name, and date of birth combination matches SSA records, with explicit consent from the individual. Used for fraud prevention and identity verification in financial services.
+    tags:
+      - Verification
+      - Financial Services
+
+  - term: CBSV (Consent Based SSN Verification)
+    definition: >-
+      The predecessor service to eCBSV — a manual or web-service-based SSN verification service for permissible purposes. CBSV has been largely superseded by eCBSV for programmatic verification.
+    tags:
+      - Verification
+      - Legacy
+
+  - term: Beneficiary
+    definition: >-
+      An individual who receives Social Security benefits. Beneficiaries may be retired workers, disabled workers, spouses, children, or survivors. SSA publishes open data on beneficiary counts by state and program.
+    tags:
+      - Programs
+      - Data
+
+  - term: FOIA (Freedom of Information Act)
+    definition: >-
+      A U.S. law that provides public access to records of federal agencies including SSA. Citizens can submit FOIA requests to obtain government records not otherwise publicly available through SSA's eFOIA portal.
+    tags:
+      - Legal
+      - Open Government
+
+  - term: ArcGIS Feature Service
+    definition: >-
+      The Esri ArcGIS Online platform service type used by SSA to expose its field office and resident station location data as a geospatial REST API. Feature Services support SQL-style WHERE queries and return JSON or GeoJSON responses.
+    tags:
+      - Technology
+      - API
+
+  - term: Enterprise Data Inventory (EDI)
+    definition: >-
+      SSA's catalog of datasets — both public and restricted. The EDI API exposes metadata about all SSA datasets at /api/PDL/public (public datasets), /api/PDL/non-public, and /api/PDL/restricted public endpoints.
+    tags:
+      - Open Data
+      - Catalog
+
+  - term: Full Retirement Age (FRA)
+    definition: >-
+      The age at which a Social Security beneficiary is entitled to full retirement benefits without reduction. FRA ranges from 65 to 67 depending on birth year, as established by the Social Security Amendments of 1983.
+    tags:
+      - Programs
+      - Benefits
+
+  - term: Disability Determination Services (DDS)
+    definition: >-
+      State agencies that work with SSA to evaluate disability claims and determine whether claimants meet the medical criteria for Social Security Disability Insurance (SSDI) or Supplemental Security Income (SSI).
+    tags:
+      - Programs
+      - Administration
+
+  - term: api.data.gov
+    definition: >-
+      A shared API management service run by GSA (General Services Administration) that many federal agencies use to provide access-controlled, rate-limited APIs. SSA participates in the api.data.gov catalog for some of its data APIs.
+    tags:
+      - Infrastructure
+      - Government Technology
