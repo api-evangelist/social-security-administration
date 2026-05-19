@@ -1,22 +1,23 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: SSA Field Office Address API
-  description: The Social Security Administration Field Office Address API provides location data, addresses, telephone numbers,
-    and office hours for SSA Field Offices across the United States. The data is served through the Esri ArcGIS Online platform
-    as a RESTful Feature Service. No authentication required — all data is publicly available.
+  label: SSA Field Office Address API — Field Offices
+  description: 'SSA Field Office Address API — Field Offices. 1 operations. Lead operation: Query Field Offices. Self-contained
+    Naftiko capability covering one Social Security Administration business surface.'
   tags:
-  - Social
-  - Security
-  - Administration
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Social Security Administration
+  - Field Offices
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SOCIAL_SECURITY_ADMINISTRATION_API_KEY: SOCIAL_SECURITY_ADMINISTRATION_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: social-security-administration
+    namespace: ssa-field-office-field-offices
     baseUri: https://services6.arcgis.com/zFiipv75rloRP5N4/ArcGIS/rest/services/Office_Points/FeatureServer
-    description: SSA Field Office Address API HTTP API.
+    description: SSA Field Office Address API — Field Offices business capability. Self-contained, no shared references.
     resources:
     - name: 1-query
       path: /1/query
@@ -24,12 +25,17 @@ capability:
       - name: queryfieldoffices
         method: GET
         description: Query Field Offices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: where
           in: query
           type: string
-          required: true
           description: SQL WHERE clause to filter records (use '1=1' for all records)
+          required: true
         - name: outFields
           in: query
           type: string
@@ -66,40 +72,49 @@ capability:
           in: query
           type: string
           description: Spatial relationship for filtering
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
   exposes:
   - type: rest
+    namespace: ssa-field-office-field-offices-rest
     port: 8080
-    namespace: social-security-administration-rest
-    description: REST adapter for SSA Field Office Address API.
+    description: REST adapter for SSA Field Office Address API — Field Offices. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
     resources:
-    - path: /1/query
-      name: queryfieldoffices
+    - path: /v1/1/query
+      name: 1-query
+      description: REST surface for 1-query.
       operations:
       - method: GET
         name: queryfieldoffices
         description: Query Field Offices
-        call: social-security-administration.queryfieldoffices
+        call: ssa-field-office-field-offices.queryfieldoffices
+        with:
+          where: rest.where
+          outFields: rest.outFields
+          f: rest.f
+          resultOffset: rest.resultOffset
+          resultRecordCount: rest.resultRecordCount
+          orderByFields: rest.orderByFields
+          geometry: rest.geometry
+          geometryType: rest.geometryType
+          inSR: rest.inSR
+          spatialRel: rest.spatialRel
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
+    namespace: ssa-field-office-field-offices-mcp
     port: 9090
-    namespace: social-security-administration-mcp
     transport: http
-    description: MCP adapter for SSA Field Office Address API for AI agent use.
+    description: MCP adapter for SSA Field Office Address API — Field Offices. One tool per consumed operation, routed inline
+      through this capability's consumes block.
     tools:
-    - name: queryfieldoffices
+    - name: query-field-offices
       description: Query Field Offices
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: social-security-administration.queryfieldoffices
+      call: ssa-field-office-field-offices.queryfieldoffices
       with:
         where: tools.where
         outFields: tools.outFields
@@ -111,38 +126,6 @@ capability:
         geometryType: tools.geometryType
         inSR: tools.inSR
         spatialRel: tools.spatialRel
-      inputParameters:
-      - name: where
-        type: string
-        description: SQL WHERE clause to filter records (use '1=1' for all records)
-        required: true
-      - name: outFields
-        type: string
-        description: Comma-separated list of fields to return, or * for all fields
-      - name: f
-        type: string
-        description: Response format
-      - name: resultOffset
-        type: integer
-        description: Offset for pagination
-      - name: resultRecordCount
-        type: integer
-        description: Maximum number of records to return
-      - name: orderByFields
-        type: string
-        description: Fields to sort results by
-      - name: geometry
-        type: string
-        description: Spatial filter geometry (JSON)
-      - name: geometryType
-        type: string
-        description: Type of spatial geometry filter
-      - name: inSR
-        type: integer
-        description: Spatial reference of input geometry
-      - name: spatialRel
-        type: string
-        description: Spatial relationship for filtering
       outputParameters:
       - type: object
         mapping: $.
