@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SSA Field Office Address API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Field Offices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query Field Offices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services6.arcgis.com/zFiipv75rloRP5N4/ArcGIS/rest/services/Office_Points/FeatureServer/1/query",
+            "params": [
+              {
+                "name": "where",
+                "value": "STATE='CA'",
+                "type": "query",
+                "description": "SQL WHERE clause to filter records (use '1=1' for all records)"
+              },
+              {
+                "name": "outFields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return, or * for all fields"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query",
+                "description": "Response format"
+              },
+              {
+                "name": "resultOffset",
+                "value": "",
+                "type": "query",
+                "description": "Offset for pagination"
+              },
+              {
+                "name": "resultRecordCount",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return"
+              },
+              {
+                "name": "orderByFields",
+                "value": "STATE ASC, CITY ASC",
+                "type": "query",
+                "description": "Fields to sort results by"
+              },
+              {
+                "name": "geometry",
+                "value": "",
+                "type": "query",
+                "description": "Spatial filter geometry (JSON)"
+              },
+              {
+                "name": "geometryType",
+                "value": "",
+                "type": "query",
+                "description": "Type of spatial geometry filter"
+              },
+              {
+                "name": "inSR",
+                "value": "",
+                "type": "query",
+                "description": "Spatial reference of input geometry"
+              },
+              {
+                "name": "spatialRel",
+                "value": "",
+                "type": "query",
+                "description": "Spatial relationship for filtering"
+              }
+            ]
+          },
+          "docs": "Query SSA Field Office locations, addresses, phone numbers, and hours of operation. Supports spatial queries and attribute filtering via the ArcGIS REST API. Use where=1=1 to retrieve all offices."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

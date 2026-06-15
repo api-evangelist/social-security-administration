@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SSA Resident Station Address API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Resident Stations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query Resident Stations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://services6.arcgis.com/zFiipv75rloRP5N4/arcgis/rest/services/SSA_Resident_Station_Information/FeatureServer/0/query",
+            "params": [
+              {
+                "name": "where",
+                "value": "STATE='TX'",
+                "type": "query",
+                "description": "SQL WHERE clause to filter records (use '1=1' for all records)"
+              },
+              {
+                "name": "outFields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return, or * for all fields"
+              },
+              {
+                "name": "f",
+                "value": "",
+                "type": "query",
+                "description": "Response format"
+              },
+              {
+                "name": "resultOffset",
+                "value": "",
+                "type": "query",
+                "description": "Offset for pagination"
+              },
+              {
+                "name": "resultRecordCount",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return"
+              },
+              {
+                "name": "orderByFields",
+                "value": "",
+                "type": "query",
+                "description": "Fields to sort results by"
+              }
+            ]
+          },
+          "docs": "Query SSA Resident Station locations, addresses, phone numbers, and hours of operation. Resident Stations are smaller SSA offices that may have limited hours. Use where=1=1 to retrieve all stations."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

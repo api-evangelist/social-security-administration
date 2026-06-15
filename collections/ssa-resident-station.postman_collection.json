@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "5d6bde8c-4cbc-4c18-8773-51477a0ed369",
+      "name": "Resident Stations",
+      "description": {
+        "content": "Query SSA Resident Station locations and hours",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cc277378-482c-4241-a8a1-7b8186bc5a3b",
+          "name": "Query Resident Stations",
+          "request": {
+            "name": "Query Resident Stations",
+            "description": {
+              "content": "Query SSA Resident Station locations, addresses, phone numbers, and hours of operation. Resident Stations are smaller SSA offices that may have limited hours. Use where=1=1 to retrieve all stations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "0",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "where",
+                  "value": "1=1",
+                  "description": "(Required) SQL WHERE clause to filter records (use '1=1' for all records)"
+                },
+                {
+                  "disabled": false,
+                  "key": "outFields",
+                  "value": "*",
+                  "description": "Comma-separated list of fields to return, or * for all fields"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "json",
+                  "description": "Response format"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultOffset",
+                  "value": "0",
+                  "description": "Offset for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultRecordCount",
+                  "value": "1000",
+                  "description": "Maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderByFields",
+                  "value": "<string>",
+                  "description": "Fields to sort results by"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90c5cbfb-c76c-4c75-bcd2-1625a7ee6ad5",
+              "name": "Resident Station records matching the query",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "0",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "where",
+                      "value": "STATE='TX'"
+                    },
+                    {
+                      "key": "outFields",
+                      "value": "*"
+                    },
+                    {
+                      "key": "f",
+                      "value": "json"
+                    },
+                    {
+                      "key": "resultOffset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "resultRecordCount",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "orderByFields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"objectIdFieldName\": \"string\",\n  \"fields\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"alias\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"alias\": \"string\"\n    }\n  ],\n  \"features\": [\n    {\n      \"attributes\": {\n        \"OFFICE_CODE\": \"string\",\n        \"OFFICE_NAME\": \"string\",\n        \"ADDRESS_LINE_1\": \"string\",\n        \"ADDRESS_LINE_2\": \"string\",\n        \"ADDRESS_LINE_3\": \"string\",\n        \"CITY\": \"string\",\n        \"STATE\": \"string\",\n        \"ZIP_CODE\": \"string\",\n        \"PHONE\": \"string\",\n        \"FAX\": \"string\",\n        \"MONDAY_OPEN_TIME\": \"string\",\n        \"MONDAY_CLOSE_TIME\": \"string\",\n        \"TUESDAY_OPEN_TIME\": \"string\",\n        \"TUESDAY_CLOSE_TIME\": \"string\",\n        \"WEDNESDAY_OPEN_TIME\": \"string\",\n        \"WEDNESDAY_CLOSE_TIME\": \"string\",\n        \"THURSDAY_OPEN_TIME\": \"string\",\n        \"THURSDAY_CLOSE_TIME\": \"string\",\n        \"FRIDAY_OPEN_TIME\": \"string\",\n        \"FRIDAY_CLOSE_TIME\": \"string\",\n        \"LATITUDE_NUM\": 870.9635879927191,\n        \"LONGITUDE_NUM\": 9954.794427322957,\n        \"ObjectId\": 2934\n      },\n      \"geometry\": {\n        \"x\": 5226.481144464274,\n        \"y\": 3324.484251639408\n      }\n    },\n    {\n      \"attributes\": {\n        \"OFFICE_CODE\": \"string\",\n        \"OFFICE_NAME\": \"string\",\n        \"ADDRESS_LINE_1\": \"string\",\n        \"ADDRESS_LINE_2\": \"string\",\n        \"ADDRESS_LINE_3\": \"string\",\n        \"CITY\": \"string\",\n        \"STATE\": \"string\",\n        \"ZIP_CODE\": \"string\",\n        \"PHONE\": \"string\",\n        \"FAX\": \"string\",\n        \"MONDAY_OPEN_TIME\": \"string\",\n        \"MONDAY_CLOSE_TIME\": \"string\",\n        \"TUESDAY_OPEN_TIME\": \"string\",\n        \"TUESDAY_CLOSE_TIME\": \"string\",\n        \"WEDNESDAY_OPEN_TIME\": \"string\",\n        \"WEDNESDAY_CLOSE_TIME\": \"string\",\n        \"THURSDAY_OPEN_TIME\": \"string\",\n        \"THURSDAY_CLOSE_TIME\": \"string\",\n        \"FRIDAY_OPEN_TIME\": \"string\",\n        \"FRIDAY_CLOSE_TIME\": \"string\",\n        \"LATITUDE_NUM\": 4749.730381589762,\n        \"LONGITUDE_NUM\": 98.8114855915323,\n        \"ObjectId\": 2148\n      },\n      \"geometry\": {\n        \"x\": 696.6188877188173,\n        \"y\": 7278.862347781908\n      }\n    }\n  ],\n  \"exceededTransferLimit\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services6.arcgis.com/zFiipv75rloRP5N4/arcgis/rest/services/SSA_Resident_Station_Information/FeatureServer",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4f110bde-9730-4ad0-97c4-48dcd7a2bb32",
+    "name": "SSA Resident Station Address API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Security Administration Resident Station Address API provides location data, addresses, telephone numbers, and office hours for SSA Resident Stations — smaller SSA offices that serve rural and underserved communities. Data is served through the Esri ArcGIS Online platform as a RESTful Feature Service. No authentication required.\n\nContact Support:\n Name: SSA Developer Support",
+      "type": "text/plain"
+    }
+  }
+}
