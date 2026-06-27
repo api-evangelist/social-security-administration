@@ -99,7 +99,7 @@ common:
     url: https://www.linkedin.com/company/ssa
   - type: Website
     url: https://www.ssa.gov/
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://www.ssa.gov/developer/
   - type: Open Data Portal
     url: https://www.ssa.gov/data/
@@ -107,13 +107,13 @@ common:
     url: https://www.ssa.gov/data/Open-Data-Inventory-Information.html
   - type: Data.gov Organization
     url: https://catalog.data.gov/organization/ssa-gov
-  - type: JSON Schema
+  - type: JSONSchema
     url: json-schema/ssa-field-office-schema.json
-  - type: JSON Schema
+  - type: JSONSchema
     url: json-schema/ssa-resident-station-schema.json
-  - type: JSON Structure
+  - type: JSONStructure
     url: json-structure/ssa-office-structure.json
-  - type: JSON-LD Context
+  - type: JSONLDContext
     url: json-ld/ssa-context.jsonld
   - type: Vocabulary
     url: vocabulary/ssa-vocabulary.yml
