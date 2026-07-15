@@ -95,6 +95,8 @@ apis:
       - type: CBSV Web Service
         url: https://www.ssa.gov/cbsv/webservice.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/social-security-administration-agentic-access.yml
   - type: DomainSecurity
     url: security/social-security-administration-domain-security.yml
   - type: LinkedIn
