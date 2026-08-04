@@ -1,0 +1,225 @@
+openapi: 3.0.3
+info:
+  title: SSA Field Office Address API
+  description: >-
+    The Social Security Administration Field Office Address API provides location data, addresses, telephone numbers, and office hours for SSA Field Offices across the United States. The data is served through the Esri ArcGIS Online platform as a RESTful Feature Service. No authentication required — all data is publicly available.
+  version: '1.0'
+  contact:
+    name: SSA Developer Support
+    url: https://www.ssa.gov/developer/
+  license:
+    name: Public Domain (U.S. Government Work)
+    url: https://www.usa.gov/government-works
+servers:
+  - url: https://services6.arcgis.com/zFiipv75rloRP5N4/ArcGIS/rest/services/Office_Points/FeatureServer
+    description: SSA Field Office ArcGIS Feature Service
+tags:
+  - name: Field Offices
+    description: Query SSA Field Office locations and hours
+paths:
+  /1/query:
+    get:
+      operationId: queryFieldOffices
+      summary: Query Field Offices
+      description: >-
+        Query SSA Field Office locations, addresses, phone numbers, and hours of operation. Supports spatial queries and attribute filtering via the ArcGIS REST API. Use where=1=1 to retrieve all offices.
+      tags:
+        - Field Offices
+      parameters:
+        - name: where
+          in: query
+          required: true
+          description: SQL WHERE clause to filter records (use '1=1' for all records)
+          schema:
+            type: string
+            default: '1=1'
+          example: "STATE='CA'"
+        - name: outFields
+          in: query
+          required: false
+          description: Comma-separated list of fields to return, or * for all fields
+          schema:
+            type: string
+            default: '*'
+        - name: f
+          in: query
+          required: false
+          description: Response format
+          schema:
+            type: string
+            enum: [json, geojson, html]
+            default: json
+        - name: resultOffset
+          in: query
+          required: false
+          description: Offset for pagination
+          schema:
+            type: integer
+            default: 0
+        - name: resultRecordCount
+          in: query
+          required: false
+          description: Maximum number of records to return
+          schema:
+            type: integer
+            default: 1000
+            maximum: 1000
+        - name: orderByFields
+          in: query
+          required: false
+          description: Fields to sort results by
+          schema:
+            type: string
+          example: "STATE ASC, CITY ASC"
+        - name: geometry
+          in: query
+          required: false
+          description: Spatial filter geometry (JSON)
+          schema:
+            type: string
+        - name: geometryType
+          in: query
+          required: false
+          description: Type of spatial geometry filter
+          schema:
+            type: string
+            enum: [esriGeometryPoint, esriGeometryEnvelope, esriGeometryPolygon]
+        - name: inSR
+          in: query
+          required: false
+          description: Spatial reference of input geometry
+          schema:
+            type: integer
+        - name: spatialRel
+          in: query
+          required: false
+          description: Spatial relationship for filtering
+          schema:
+            type: string
+            enum: [esriSpatialRelIntersects, esriSpatialRelContains, esriSpatialRelWithin]
+      responses:
+        '200':
+          description: Field office records matching the query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeatureQueryResponse'
+components:
+  schemas:
+    FeatureQueryResponse:
+      type: object
+      properties:
+        objectIdFieldName:
+          type: string
+          description: Name of the object ID field
+        globalIdFieldName:
+          type: string
+        fields:
+          type: array
+          description: Field metadata for returned attributes
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+              alias:
+                type: string
+        features:
+          type: array
+          description: Array of matching field office feature records
+          items:
+            $ref: '#/components/schemas/FieldOfficeFeature'
+        exceededTransferLimit:
+          type: boolean
+          description: Indicates if results were truncated due to record limit
+    FieldOfficeFeature:
+      type: object
+      properties:
+        attributes:
+          $ref: '#/components/schemas/FieldOfficeAttributes'
+        geometry:
+          type: object
+          description: Geographic coordinates of the office
+          properties:
+            x:
+              type: number
+              description: Longitude (Web Mercator)
+            y:
+              type: number
+              description: Latitude (Web Mercator)
+    FieldOfficeAttributes:
+      type: object
+      properties:
+        OFFICE_CODE:
+          type: string
+          description: Unique office code identifier
+        OFFICE_NAME:
+          type: string
+          description: Full name of the SSA field office
+        ADDRESS_LINE_1:
+          type: string
+          description: Primary street address
+        ADDRESS_LINE_2:
+          type: string
+          description: Secondary address line (suite, floor, etc.)
+        ADDRESS_LINE_3:
+          type: string
+          description: Additional address information
+        CITY:
+          type: string
+          description: City where the office is located
+        STATE:
+          type: string
+          description: Two-letter state abbreviation
+        ZIP_CODE:
+          type: string
+          description: ZIP code of the office
+        PHONE:
+          type: string
+          description: Main phone number for the office
+        FAX:
+          type: string
+          description: Fax number for the office
+        MONDAY_OPEN_TIME:
+          type: string
+          description: Monday opening time
+        MONDAY_CLOSE_TIME:
+          type: string
+          description: Monday closing time
+        TUESDAY_OPEN_TIME:
+          type: string
+          description: Tuesday opening time
+        TUESDAY_CLOSE_TIME:
+          type: string
+          description: Tuesday closing time
+        WEDNESDAY_OPEN_TIME:
+          type: string
+          description: Wednesday opening time
+        WEDNESDAY_CLOSE_TIME:
+          type: string
+          description: Wednesday closing time
+        THURSDAY_OPEN_TIME:
+          type: string
+          description: Thursday opening time
+        THURSDAY_CLOSE_TIME:
+          type: string
+          description: Thursday closing time
+        FRIDAY_OPEN_TIME:
+          type: string
+          description: Friday opening time
+        FRIDAY_CLOSE_TIME:
+          type: string
+          description: Friday closing time
+        LATITUDE_NUM:
+          type: number
+          format: double
+          description: Latitude in decimal degrees (WGS 84)
+        LONGITUDE_NUM:
+          type: number
+          format: double
+          description: Longitude in decimal degrees (WGS 84)
+        ObjectId:
+          type: integer
+          description: ArcGIS system-maintained unique identifier

@@ -1,0 +1,16 @@
+{
+  "provider": "social-security-administration",
+  "sources": [
+    "social-security-administration-field-offices-api-openapi.yml",
+    "social-security-administration-resident-stations-api-openapi.yml"
+  ],
+  "outputs": [
+    "social-security-administration-field-offices-api-openapi.yml",
+    "social-security-administration-resident-stations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
