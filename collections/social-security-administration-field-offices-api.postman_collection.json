@@ -1,0 +1,206 @@
+{
+  "item": [
+    {
+      "id": "13af5781-5112-44d8-b42e-a1c9876a7b40",
+      "name": "Field Offices",
+      "description": {
+        "content": "Query SSA Field Office locations and hours",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f9a2cafc-0b4b-437c-89e5-92146f1f10c2",
+          "name": "Query Field Offices",
+          "request": {
+            "name": "Query Field Offices",
+            "description": {
+              "content": "Query SSA Field Office locations, addresses, phone numbers, and hours of operation. Supports spatial queries and attribute filtering via the ArcGIS REST API. Use where=1=1 to retrieve all offices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "where",
+                  "value": "1=1",
+                  "description": "(Required) SQL WHERE clause to filter records (use '1=1' for all records)"
+                },
+                {
+                  "disabled": false,
+                  "key": "outFields",
+                  "value": "*",
+                  "description": "Comma-separated list of fields to return, or * for all fields"
+                },
+                {
+                  "disabled": false,
+                  "key": "f",
+                  "value": "json",
+                  "description": "Response format"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultOffset",
+                  "value": "0",
+                  "description": "Offset for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "resultRecordCount",
+                  "value": "1000",
+                  "description": "Maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderByFields",
+                  "value": "<string>",
+                  "description": "Fields to sort results by"
+                },
+                {
+                  "disabled": false,
+                  "key": "geometry",
+                  "value": "<string>",
+                  "description": "Spatial filter geometry (JSON)"
+                },
+                {
+                  "disabled": false,
+                  "key": "geometryType",
+                  "value": "<string>",
+                  "description": "Type of spatial geometry filter"
+                },
+                {
+                  "disabled": false,
+                  "key": "inSR",
+                  "value": "<integer>",
+                  "description": "Spatial reference of input geometry"
+                },
+                {
+                  "disabled": false,
+                  "key": "spatialRel",
+                  "value": "<string>",
+                  "description": "Spatial relationship for filtering"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cd07d9c7-5194-421f-a1ba-e37f7fe91d91",
+              "name": "Field office records matching the query",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "1",
+                    "query"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "where",
+                      "value": "STATE='CA'"
+                    },
+                    {
+                      "key": "outFields",
+                      "value": "*"
+                    },
+                    {
+                      "key": "f",
+                      "value": "json"
+                    },
+                    {
+                      "key": "resultOffset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "resultRecordCount",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "orderByFields",
+                      "value": "STATE ASC, CITY ASC"
+                    },
+                    {
+                      "key": "geometry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "geometryType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "inSR",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "spatialRel",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"objectIdFieldName\": \"string\",\n  \"globalIdFieldName\": \"string\",\n  \"fields\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"alias\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"alias\": \"string\"\n    }\n  ],\n  \"features\": [\n    {\n      \"attributes\": {\n        \"OFFICE_CODE\": \"string\",\n        \"OFFICE_NAME\": \"string\",\n        \"ADDRESS_LINE_1\": \"string\",\n        \"ADDRESS_LINE_2\": \"string\",\n        \"ADDRESS_LINE_3\": \"string\",\n        \"CITY\": \"string\",\n        \"STATE\": \"string\",\n        \"ZIP_CODE\": \"string\",\n        \"PHONE\": \"string\",\n        \"FAX\": \"string\",\n        \"MONDAY_OPEN_TIME\": \"string\",\n        \"MONDAY_CLOSE_TIME\": \"string\",\n        \"TUESDAY_OPEN_TIME\": \"string\",\n        \"TUESDAY_CLOSE_TIME\": \"string\",\n        \"WEDNESDAY_OPEN_TIME\": \"string\",\n        \"WEDNESDAY_CLOSE_TIME\": \"string\",\n        \"THURSDAY_OPEN_TIME\": \"string\",\n        \"THURSDAY_CLOSE_TIME\": \"string\",\n        \"FRIDAY_OPEN_TIME\": \"string\",\n        \"FRIDAY_CLOSE_TIME\": \"string\",\n        \"LATITUDE_NUM\": 4473.393981587227,\n        \"LONGITUDE_NUM\": 7225.3120541484595,\n        \"ObjectId\": 211\n      },\n      \"geometry\": {\n        \"x\": 2406.768015804439,\n        \"y\": 5316.550603951654\n      }\n    },\n    {\n      \"attributes\": {\n        \"OFFICE_CODE\": \"string\",\n        \"OFFICE_NAME\": \"string\",\n        \"ADDRESS_LINE_1\": \"string\",\n        \"ADDRESS_LINE_2\": \"string\",\n        \"ADDRESS_LINE_3\": \"string\",\n        \"CITY\": \"string\",\n        \"STATE\": \"string\",\n        \"ZIP_CODE\": \"string\",\n        \"PHONE\": \"string\",\n        \"FAX\": \"string\",\n        \"MONDAY_OPEN_TIME\": \"string\",\n        \"MONDAY_CLOSE_TIME\": \"string\",\n        \"TUESDAY_OPEN_TIME\": \"string\",\n        \"TUESDAY_CLOSE_TIME\": \"string\",\n        \"WEDNESDAY_OPEN_TIME\": \"string\",\n        \"WEDNESDAY_CLOSE_TIME\": \"string\",\n        \"THURSDAY_OPEN_TIME\": \"string\",\n        \"THURSDAY_CLOSE_TIME\": \"string\",\n        \"FRIDAY_OPEN_TIME\": \"string\",\n        \"FRIDAY_CLOSE_TIME\": \"string\",\n        \"LATITUDE_NUM\": 1675.8759475562078,\n        \"LONGITUDE_NUM\": 1580.5073620088228,\n        \"ObjectId\": 9204\n      },\n      \"geometry\": {\n        \"x\": 844.0865283509658,\n        \"y\": 2723.7734083420582\n      }\n    }\n  ],\n  \"exceededTransferLimit\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://services6.arcgis.com/zFiipv75rloRP5N4/ArcGIS/rest/services/Office_Points/FeatureServer",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "54d8bc01-7b1b-4c9e-be41-63c40b17e92f",
+    "name": "SSA Field Office Address Field Offices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Security Administration Field Office Address API provides location data, addresses, telephone numbers, and office hours for SSA Field Offices across the United States. The data is served through the Esri ArcGIS Online platform as a RESTful Feature Service. No authentication required — all data is publicly available.\n\nContact Support:\n Name: SSA Developer Support",
+      "type": "text/plain"
+    }
+  }
+}
