@@ -32,7 +32,7 @@ tags:
   - OASDI
   - Disability Benefits
   - Retirement Benefits
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: social-security-administration:oasdi-data-api
   name: SSA OASDI Open Data API
