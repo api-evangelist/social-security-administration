@@ -25,6 +25,14 @@ created: '2024-12-03'
 modified: '2026-05-19'
 position: Consuming
 tags:
+  - Federal-Government
+  - Social Security
+  - Government API
+  - Open Data
+  - OASDI
+  - Disability Benefits
+  - Retirement Benefits
+tags_raw:
   - Federal Government
   - Social Security
   - Government API
@@ -59,6 +67,11 @@ apis:
     the individual. Access is restricted to eligible financial institutions.
   humanURL: https://www.ssa.gov/dataexchange/eCBSV/
   tags:
+  - SSN Verification
+  - Identity Verification
+  - Financial-Services
+  - Consent Based
+  tags_raw:
   - SSN Verification
   - Identity Verification
   - Financial Services
