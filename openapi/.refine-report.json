@@ -1,8 +1,8 @@
 {
   "provider": "social-security-administration",
   "sources": [
-    "social-security-administration-field-offices-api-openapi.yml",
-    "social-security-administration-resident-stations-api-openapi.yml"
+    "_original/ssa-field-office-openapi.yml",
+    "_original/ssa-resident-station-openapi.yml"
   ],
   "outputs": [
     "social-security-administration-field-offices-api-openapi.yml",
@@ -11,6 +11,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ssa-field-office-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ssa-resident-station-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "social-security-administration-field-offices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "social-security-administration-resident-stations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

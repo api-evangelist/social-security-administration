@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: SSA Field Office Address Field Offices API
   description: The Social Security Administration Field Office Address API provides location data, addresses, telephone numbers, and office hours for SSA Field Offices across the United States. The data is served through the Esri ArcGIS Online platform as a RESTful Feature Service. No authentication required — all data is publicly available.
@@ -113,21 +113,6 @@ paths:
                 $ref: '#/components/schemas/FeatureQueryResponse'
 components:
   schemas:
-    FieldOfficeFeature:
-      type: object
-      properties:
-        attributes:
-          $ref: '#/components/schemas/FieldOfficeAttributes'
-        geometry:
-          type: object
-          description: Geographic coordinates of the office
-          properties:
-            x:
-              type: number
-              description: Longitude (Web Mercator)
-            y:
-              type: number
-              description: Latitude (Web Mercator)
     FeatureQueryResponse:
       type: object
       properties:
@@ -156,6 +141,21 @@ components:
         exceededTransferLimit:
           type: boolean
           description: Indicates if results were truncated due to record limit
+    FieldOfficeFeature:
+      type: object
+      properties:
+        attributes:
+          $ref: '#/components/schemas/FieldOfficeAttributes'
+        geometry:
+          type: object
+          description: Geographic coordinates of the office
+          properties:
+            x:
+              type: number
+              description: Longitude (Web Mercator)
+            y:
+              type: number
+              description: Latitude (Web Mercator)
     FieldOfficeAttributes:
       type: object
       properties:

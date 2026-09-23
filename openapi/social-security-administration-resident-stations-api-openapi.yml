@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: SSA Field Office Address Field Offices Resident Stations API
-  description: The Social Security Administration Field Office Address API provides location data, addresses, telephone numbers, and office hours for SSA Field Offices across the United States. The data is served through the Esri ArcGIS Online platform as a RESTful Feature Service. No authentication required — all data is publicly available.
+  title: SSA Resident Station Address Resident Stations API
+  description: The Social Security Administration Resident Station Address API provides location data, addresses, telephone numbers, and office hours for SSA Resident Stations — smaller SSA offices that serve rural and underserved communities. Data is served through the Esri ArcGIS Online platform as a RESTful Feature Service. No authentication required.
   version: '1.0'
   contact:
     name: SSA Developer Support
@@ -10,8 +10,8 @@ info:
     name: Public Domain (U.S. Government Work)
     url: https://www.usa.gov/government-works
 servers:
-- url: https://services6.arcgis.com/zFiipv75rloRP5N4/ArcGIS/rest/services/Office_Points/FeatureServer
-  description: SSA Field Office ArcGIS Feature Service
+- url: https://services6.arcgis.com/zFiipv75rloRP5N4/arcgis/rest/services/SSA_Resident_Station_Information/FeatureServer
+  description: SSA Resident Station ArcGIS Feature Service
 tags:
 - name: Resident Stations
   description: Query SSA Resident Station locations and hours
@@ -80,6 +80,18 @@ paths:
                 $ref: '#/components/schemas/ResidentStationQueryResponse'
 components:
   schemas:
+    ResidentStationFeature:
+      type: object
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ResidentStationAttributes'
+        geometry:
+          type: object
+          properties:
+            x:
+              type: number
+            y:
+              type: number
     ResidentStationAttributes:
       type: object
       properties:
@@ -154,18 +166,6 @@ components:
         ObjectId:
           type: integer
           description: ArcGIS system unique identifier
-    ResidentStationFeature:
-      type: object
-      properties:
-        attributes:
-          $ref: '#/components/schemas/ResidentStationAttributes'
-        geometry:
-          type: object
-          properties:
-            x:
-              type: number
-            y:
-              type: number
     ResidentStationQueryResponse:
       type: object
       properties:
