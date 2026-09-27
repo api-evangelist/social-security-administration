@@ -113,34 +113,6 @@ paths:
                 $ref: '#/components/schemas/FeatureQueryResponse'
 components:
   schemas:
-    FeatureQueryResponse:
-      type: object
-      properties:
-        objectIdFieldName:
-          type: string
-          description: Name of the object ID field
-        globalIdFieldName:
-          type: string
-        fields:
-          type: array
-          description: Field metadata for returned attributes
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              type:
-                type: string
-              alias:
-                type: string
-        features:
-          type: array
-          description: Array of matching field office feature records
-          items:
-            $ref: '#/components/schemas/FieldOfficeFeature'
-        exceededTransferLimit:
-          type: boolean
-          description: Indicates if results were truncated due to record limit
     FieldOfficeFeature:
       type: object
       properties:
@@ -230,3 +202,31 @@ components:
         ObjectId:
           type: integer
           description: ArcGIS system-maintained unique identifier
+    FeatureQueryResponse:
+      type: object
+      properties:
+        objectIdFieldName:
+          type: string
+          description: Name of the object ID field
+        globalIdFieldName:
+          type: string
+        fields:
+          type: array
+          description: Field metadata for returned attributes
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+              alias:
+                type: string
+        features:
+          type: array
+          description: Array of matching field office feature records
+          items:
+            $ref: '#/components/schemas/FieldOfficeFeature'
+        exceededTransferLimit:
+          type: boolean
+          description: Indicates if results were truncated due to record limit

@@ -36,7 +36,7 @@ created: '2024-12-03'
 modified: '2026-05-19'
 position: Consuming
 tags:
-  - Federal-Government
+  - Federal Government
   - Social Security
   - Government API
   - Open Data
@@ -51,6 +51,7 @@ tags_raw:
   - OASDI
   - Disability Benefits
   - Retirement Benefits
+  - Federal-Government
 specificationVersion: '0.23'
 apis:
 - aid: social-security-administration:oasdi-data-api
@@ -80,13 +81,14 @@ apis:
   tags:
   - SSN Verification
   - Identity Verification
-  - Financial-Services
+  - Financial Services
   - Consent Based
   tags_raw:
   - SSN Verification
   - Identity Verification
   - Financial Services
   - Consent Based
+  - Financial-Services
   properties:
   - type: Documentation
     url: https://www.ssa.gov/dataexchange/eCBSV/technical_information.html
