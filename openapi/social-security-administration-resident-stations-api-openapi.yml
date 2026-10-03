@@ -92,6 +92,29 @@ components:
               type: number
             y:
               type: number
+    ResidentStationQueryResponse:
+      type: object
+      properties:
+        objectIdFieldName:
+          type: string
+        fields:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+              alias:
+                type: string
+        features:
+          type: array
+          description: Array of matching resident station records
+          items:
+            $ref: '#/components/schemas/ResidentStationFeature'
+        exceededTransferLimit:
+          type: boolean
     ResidentStationAttributes:
       type: object
       properties:
@@ -166,26 +189,3 @@ components:
         ObjectId:
           type: integer
           description: ArcGIS system unique identifier
-    ResidentStationQueryResponse:
-      type: object
-      properties:
-        objectIdFieldName:
-          type: string
-        fields:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              type:
-                type: string
-              alias:
-                type: string
-        features:
-          type: array
-          description: Array of matching resident station records
-          items:
-            $ref: '#/components/schemas/ResidentStationFeature'
-        exceededTransferLimit:
-          type: boolean
