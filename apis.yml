@@ -133,6 +133,12 @@ apis:
     url: >-
       https://services6.arcgis.com/zFiipv75rloRP5N4/arcgis/rest/services/SSA_Resident_Station_Information/FeatureServer
 common:
+  - type: Plans
+    url: plans/social-security-administration-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/social-security-administration-rate-limits.yml
+  - type: FinOps
+    url: finops/social-security-administration-finops.yml
   - type: AgenticAccess
     url: agentic-access/social-security-administration-agentic-access.yml
   - type: DomainSecurity
