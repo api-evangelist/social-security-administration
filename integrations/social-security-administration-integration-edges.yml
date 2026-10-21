@@ -16,9 +16,35 @@ edges:
     matched_domain: ssa.gov
     detected_by: sweep-health-networks.py
     detected: '2026-10-12'
+- partner_name: Login.gov
+  partner: login-gov
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://github.com/GSA-TTS/identity-site/blob/main/content/_partners/index._en.md
+  mirror_of: login-gov/integrations/login-gov-integration-edges.yml
+  apps:
+  - U.S. Social Security Administration (SSA)
+  identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+  category: signs the public in through Login.gov
+  detected: '2026-10-21'
+  detected_by: sweep-us-federal-api-programs.py
 generated: '2026-10-12'
 method: searched
 checked:
 - https://www.commonwellalliance.org/wp-json/wp/v2/pages?slug=commonwell-members&_fields=id,link,content
+- https://api.data.gov/
+- https://api.data.gov/docs/
+- https://github.com/GSA-TTS/identity-site
+- https://github.com/GSA/api.data.gov/blob/main/content/users.csv
+- https://login.gov/partners/
+- https://marketplace.fedramp.gov/
+- https://marketplace.fedramp.gov/products/
+- https://partners.login.gov/
+- https://www.gsaelibrary.gsa.gov/ElibMain/home.do
 source:
 - https://www.commonwellalliance.org/wp-json/wp/v2/pages?slug=commonwell-members&_fields=id,link,content

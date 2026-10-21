@@ -23,3 +23,16 @@
     detected: '2026-10-12'
   status: not-a-workflow
   arazzo: null
+- slug: social-security-administration-login-gov
+  label: Login.gov
+  partner: login-gov
+  partner_name: Login.gov
+  category: signs the public in through Login.gov
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://github.com/GSA-TTS/identity-site/blob/main/content/_partners/index._en.md
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
