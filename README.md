@@ -1,4 +1,4 @@
-# Social Security Administration (social-security-administration)
+# Social Security Administration
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,132 +66,155 @@
 
 The Social Security Administration (SSA) is a U.S. federal agency that administers Social Security programs including retirement, disability (SSDI), and survivor benefits. SSA's Developer Support portal provides APIs for locating field offices and resident stations, accessing open data on OASDI beneficiary statistics, and verifying Social Security Numbers through the eCBSV program.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/social-security-administration/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/social-security-administration/refs/heads/main/apis.yml)
+**Areas:** Federal Government · Social Security · Government API · Open Data · OASDI · Disability Benefits · Retirement Benefits
 
-## Scope
+## Social Security Administration on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Social Security Administration is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/social-security-administration/](https://apis.io/providers/social-security-administration/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Federal Government
-- Social Security
-- Government API
-- Open Data
-- OASDI
-- Disability Benefits
-- Retirement Benefits
+- [SSA OASDI Open Data API](https://apis.io/apis/social-security-administration/oasdi-data-api/) — Provides statistics on Old Age, Survivors, and Disability Insurance (OASDI) beneficiaries including counts by state, total population data, and benefit…
+- [SSA eCBSV Verification API](https://apis.io/apis/social-security-administration/ecbsv-api/) — The Electronic Consent Based SSN Verification (eCBSV) Service allows financial institutions to verify that a provided Social Security Number, name, and date…
+- [Social Security Administration Field Offices API](https://apis.io/apis/social-security-administration/social-security-administration-field-offices-api/) — Query SSA Field Office locations and hours
+- [Social Security Administration Resident Stations API](https://apis.io/apis/social-security-administration/social-security-administration-resident-stations-api/) — Query SSA Resident Station locations and hours
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-12-03
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### SSA Field Office Address API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Provides location, address, telephone numbers, and office hours for Social Security Administration Field Offices across the United States. Uses the Esri ArcGIS Online platform as a RESTful Feature Service.
+- [Social Security Administration Agentic Access](https://apis.io/agentic-access/social-security-administration/social-security-administration-agentic-access/)
 
-- **Human URL:** [https://www.ssa.gov/developer/api/FO_Address_Data_AppDevs.htm](https://www.ssa.gov/developer/api/FO_Address_Data_AppDevs.htm)
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- Field Offices
-- Location Services
-- Government Data
-- Open Data
+- [SSA Field Office](https://apis.io/schemas/social-security-administration/ssa-field-office/)
+- [SSA Resident Station](https://apis.io/schemas/social-security-administration/ssa-resident-station/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://www.ssa.gov/developer/api/FO_Address_Data_AppDevs.htm)
-- [OpenAPI](openapi/ssa-field-office-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/ssa-field-office.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ssa-field-office.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Arc G I S  Feature  Service](https://services6.arcgis.com/zFiipv75rloRP5N4/ArcGIS/rest/services/Office_Points/FeatureServer/1)
+Data models expressed in JSON Structure.
 
-### SSA Resident Station Address API
+- [Ssa Office Structure](https://apis.io/json-structure/social-security-administration/ssa-office-structure/)
 
-Provides location, address, telephone numbers, and office hours for Social Security Administration Resident Stations — smaller SSA offices that serve rural communities. Uses the Esri ArcGIS Online platform as a RESTful Feature Service.
+#### JSON-LD (1)
 
-- **Human URL:** [https://www.ssa.gov/developer/api/RS_Address_Data_AppDevs.htm](https://www.ssa.gov/developer/api/RS_Address_Data_AppDevs.htm)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Ssa Context](https://apis.io/jsonld/social-security-administration/ssa-context/)
 
-- Resident Stations
-- Location Services
-- Government Data
-- Open Data
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://www.ssa.gov/developer/api/RS_Address_Data_AppDevs.htm)
-- [OpenAPI](openapi/ssa-resident-station-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/ssa-resident-station.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ssa-resident-station.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Arc G I S  Feature  Service](https://services6.arcgis.com/zFiipv75rloRP5N4/arcgis/rest/services/SSA_Resident_Station_Information/FeatureServer)
+- [Social Security Administration Vocabulary](https://apis.io/vocabularies/social-security-administration/ssa-vocabulary/)
 
-### SSA OASDI Open Data API
+#### Examples (1)
 
-Provides statistics on Old Age, Survivors, and Disability Insurance (OASDI) beneficiaries including counts by state, total population data, and benefit payment statistics. Available through SSA's open data portal and Esri Feature Services.
+Example requests and responses.
 
-- **Human URL:** [https://www.ssa.gov/data/OASDIBeneficiariesbyState.htm](https://www.ssa.gov/data/OASDIBeneficiariesbyState.htm)
+- [Ssa Field Office Query Example](https://apis.io/examples/social-security-administration/ssa-field-office-query-example/)
 
-#### Tags
+#### Collections (4)
 
-- OASDI
-- Beneficiary Statistics
-- Open Data
-- Benefits Data
+Postman and Open Collection request collections.
 
-#### Properties
+- [SSA Field Office Address Field Offices API](https://apis.io/collections/social-security-administration/open-social-security-administration-field-offices-api/)
+- [SSA Field Office Address Field Offices Resident Stations API](https://apis.io/collections/social-security-administration/open-social-security-administration-resident-stations-api/)
+- [SSA Field Office Address API](https://apis.io/collections/social-security-administration/open-ssa-field-office/)
+- [SSA Resident Station Address API](https://apis.io/collections/social-security-administration/open-ssa-resident-station/)
 
-- [Documentation](https://www.ssa.gov/data/OASDIBeneficiariesbyState.htm)
-- [Open  Data  Portal](https://www.ssa.gov/data/)
-- [Postman Collection](collections/ssa-field-office.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ssa-field-office.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/ssa-resident-station.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ssa-resident-station.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (2)
 
-### SSA eCBSV Verification API
+Spectral rulesets for the provider's contracts.
 
-The Electronic Consent Based SSN Verification (eCBSV) Service allows financial institutions to verify that a provided Social Security Number, name, and date of birth match SSA records, with consent from the individual. Access is restricted to eligible financial institutions.
+- [Social Security Administration — jsonschema rules](https://apis.io/rules/social-security-administration/social-security-administration-jsonschema-spectral-rules/)
+- [Social Security Administration — ssa rules](https://apis.io/rules/social-security-administration/ssa-rules/)
 
-- **Human URL:** [https://www.ssa.gov/dataexchange/eCBSV/](https://www.ssa.gov/dataexchange/eCBSV/)
+#### Security (1)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- SSN Verification
-- Identity Verification
-- Financial Services
-- Consent Based
+- [Social Security Administration Domain Security](https://apis.io/security/social-security-administration/social-security-administration-domain-security/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://www.ssa.gov/dataexchange/eCBSV/technical_information.html)
-- [C B S V  Web  Service](https://www.ssa.gov/cbsv/webservice.html)
-- [Postman Collection](collections/ssa-field-office.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ssa-field-office.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/ssa-resident-station.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ssa-resident-station.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published plans, tiers and prices.
 
-## Common Properties
+- [Social Security Administration Plans Pricing](https://apis.io/plans/social-security-administration/social-security-administration-plans-pricing/)
 
-- [LinkedIn](https://www.linkedin.com/company/ssa)
+#### Rate limits (1)
+
+Published request limits.
+
+- [Social Security Administration Rate Limits](https://apis.io/rate-limits/social-security-administration/social-security-administration-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Social Security Administration Finops](https://apis.io/finops/social-security-administration/social-security-administration-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.ssa.gov/)
-- [Developer  Portal](https://www.ssa.gov/developer/)
-- [Open  Data  Portal](https://www.ssa.gov/data/)
-- [Open  Data  Inventory](https://www.ssa.gov/data/Open-Data-Inventory-Information.html)
-- [Data.gov  Organization](https://catalog.data.gov/organization/ssa-gov)
-- [J S O N  Schema](json-schema/ssa-field-office-schema.json)
-- [J S O N  Schema](json-schema/ssa-resident-station-schema.json)
-- [J S O N  Structure](json-structure/ssa-office-structure.json)
-- [J S O N- L D  Context](json-ld/ssa-context.jsonld)
-- [Vocabulary](vocabulary/ssa-vocabulary.yml)
-- [Examples](examples/ssa-field-office-query-example.json)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 54.1 |
+| Contract governance | 27.3 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 23.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/social-security-administration/](https://apis.io/providers/social-security-administration/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Social Security Administration: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/social-security-administration/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
